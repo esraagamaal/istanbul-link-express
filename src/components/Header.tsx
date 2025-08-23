@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Menu, Phone, Mail, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Header = () => {
@@ -18,10 +19,29 @@ const Header = () => {
               <span>+90 542 104 04 53</span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <span>🇹🇷 TR</span>
-            <span>🇺🇸 EN</span>
-          </div>
+          <Select defaultValue="en">
+            <SelectTrigger className="w-20 h-8 bg-transparent border-none text-primary-foreground hover:bg-white/10 focus:ring-0 focus:ring-offset-0">
+              <div className="flex items-center gap-2">
+                <span className="text-sm">🇺🇸</span>
+                <span className="text-sm font-medium">EN</span>
+              </div>
+              <ChevronDown className="h-3 w-3 opacity-70" />
+            </SelectTrigger>
+            <SelectContent className="min-w-24 bg-background border border-border shadow-lg">
+              <SelectItem value="en" className="cursor-pointer">
+                <div className="flex items-center gap-2">
+                  <span>🇺🇸</span>
+                  <span>EN</span>
+                </div>
+              </SelectItem>
+              <SelectItem value="tr" className="cursor-pointer">
+                <div className="flex items-center gap-2">
+                  <span>🇹🇷</span>
+                  <span>TR</span>
+                </div>
+              </SelectItem>
+            </SelectContent>
+          </Select>
         </div>
       </div>
 
