@@ -2,68 +2,71 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { MapPin, Plane, Mountain, Waves } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CoverageAreas = () => {
+  const { t } = useLanguage();
+
   const cities = [
     {
-      name: "Istanbul",
-      description: "Airport transfers and city tours",
+      name: t.areas.cities.istanbul.name,
+      description: t.areas.cities.istanbul.description,
       airports: ["IST", "SAW"],
       icon: Plane,
       image: "🏛️",
       popular: true
     },
     {
-      name: "Antalya",
-      description: "Mediterranean coast gateway",
+      name: t.areas.cities.antalya.name,
+      description: t.areas.cities.antalya.description,
       airports: ["AYT"],
       icon: Waves,
       image: "🏖️",
       popular: true
     },
     {
-      name: "Bodrum",
-      description: "Aegean paradise destination",
+      name: t.areas.cities.bodrum.name,
+      description: t.areas.cities.bodrum.description,
       airports: ["BJV"],
       icon: Waves,
       image: "⛵",
       popular: false
     },
     {
-      name: "Dalaman",
-      description: "Southwest Turkey hub",
+      name: t.areas.cities.dalaman.name,
+      description: t.areas.cities.dalaman.description,
       airports: ["DLM"],
       icon: Mountain,
       image: "🏔️",
       popular: false
     },
     {
-      name: "Izmir",
-      description: "Aegean region center",
+      name: t.areas.cities.izmir.name,
+      description: t.areas.cities.izmir.description,
       airports: ["ADB"],
       icon: Plane,
       image: "🏛️",
       popular: true
     },
     {
-      name: "Trabzon",
-      description: "Black Sea coastal city",
+      name: t.areas.cities.trabzon.name,
+      description: t.areas.cities.trabzon.description,
       airports: ["TZX"],
       icon: Mountain,
       image: "🌊",
       popular: false
     },
     {
-      name: "Nevşehir",
-      description: "Cappadocia gateway",
+      name: t.areas.cities.nevsehir.name,
+      description: t.areas.cities.nevsehir.description,
       airports: ["NAV"],
       icon: Mountain,
       image: "🎈",
       popular: true
     },
     {
-      name: "Kayseri",
-      description: "Central Anatolia hub",
+      name: t.areas.cities.kayseri.name,
+      description: t.areas.cities.kayseri.description,
       airports: ["ASR"],
       icon: Mountain,
       image: "🏔️",
@@ -76,10 +79,10 @@ const CoverageAreas = () => {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">Coverage Areas</Badge>
-          <h2 className="text-4xl font-bold mb-4">We Cover All Major Turkish Destinations</h2>
+          <Badge variant="secondary" className="mb-4">{t.areas.badge}</Badge>
+          <h2 className="text-4xl font-bold mb-4">{t.areas.title}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            From bustling metropolitan areas to stunning coastal cities and historic sites, we provide reliable shuttle services across Turkey's most popular destinations.
+            {t.areas.subtitle}
           </p>
         </div>
 
@@ -89,7 +92,7 @@ const CoverageAreas = () => {
             <Card key={index} className={`group hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden border-0 bg-gradient-to-br from-white to-warm-gray ${city.popular ? 'ring-2 ring-primary/20' : ''}`}>
               {city.popular && (
                 <Badge className="absolute top-3 right-3 z-10 bg-accent text-accent-foreground">
-                  Popular
+                  {t.areas.popular}
                 </Badge>
               )}
               
@@ -125,7 +128,7 @@ const CoverageAreas = () => {
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all"
                   >
                     <MapPin className="mr-2 h-4 w-4" />
-                    View Routes
+                    {t.areas.viewRoutes}
                   </Button>
                 </div>
               </CardContent>
@@ -135,16 +138,16 @@ const CoverageAreas = () => {
 
         {/* Call to Action */}
         <div className="text-center bg-gradient-to-r from-primary/5 to-accent/5 rounded-2xl p-8">
-          <h3 className="text-2xl font-bold mb-4">Don't See Your Destination?</h3>
+          <h3 className="text-2xl font-bold mb-4">{t.areas.cta.title}</h3>
           <p className="text-muted-foreground mb-6">
-            We're constantly expanding our coverage. Contact us for custom routes and special requests.
+            {t.areas.cta.subtitle}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70">
-              Request Custom Route
+              {t.areas.cta.customRoute}
             </Button>
             <Button size="lg" variant="outline">
-              Contact Support
+              {t.areas.cta.support}
             </Button>
           </div>
         </div>

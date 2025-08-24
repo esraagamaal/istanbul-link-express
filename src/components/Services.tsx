@@ -11,61 +11,64 @@ import {
   Headphones,
   CheckCircle
 } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: Clock,
-      title: "24/7 Service",
-      description: "Round-the-clock availability for all your transfer needs"
+      title: t.services.features["24-7"],
+      description: t.services.features["24-7-desc"]
     },
     {
       icon: Shield,
-      title: "Insurance Covered",
-      description: "Full insurance coverage for your peace of mind"
+      title: t.services.features.insurance,
+      description: t.services.features.insuranceDesc
     },
     {
       icon: Star,
-      title: "Professional Drivers",
-      description: "Licensed and experienced drivers with local knowledge"
+      title: t.services.features.drivers,
+      description: t.services.features.driversDesc
     },
     {
       icon: CreditCard,
-      title: "Flexible Payment",
-      description: "Multiple payment options available for your convenience"
+      title: t.services.features.payment,
+      description: t.services.features.paymentDesc
     },
     {
       icon: Headphones,
-      title: "24/7 Support",
-      description: "Customer support available whenever you need assistance"
+      title: t.services.features.support,
+      description: t.services.features.supportDesc
     },
     {
       icon: CheckCircle,
-      title: "On-Time Guarantee",
-      description: "Punctual service with real-time tracking"
+      title: t.services.features.onTime,
+      description: t.services.features.onTimeDesc
     }
   ];
 
   const serviceTypes = [
     {
-      title: "Airport Transfer",
-      description: "Direct transfers from/to all major Turkish airports",
-      features: ["Door-to-door service", "Flight monitoring", "Meet & greet"],
-      price: "Starting from ₺120",
-      popular: true
+      title: t.services.types.airport.title,
+      description: t.services.types.airport.description,
+      features: t.services.types.airport.features,
+      price: t.services.types.airport.price,
+      popular: t.services.types.airport.popular
     },
     {
-      title: "City Transfer",
-      description: "Comfortable rides between cities and tourist destinations",
-      features: ["Inter-city travel", "Tourist locations", "Hotel pickups"],
-      price: "Starting from ₺200",
+      title: t.services.types.city.title,
+      description: t.services.types.city.description,
+      features: t.services.types.city.features,
+      price: t.services.types.city.price,
       popular: false
     },
     {
-      title: "Hourly Rental",
-      description: "Rent our vehicles by the hour for flexible transportation",
-      features: ["Flexible timing", "Multiple stops", "Personal driver"],
-      price: "Starting from ₺80/hour",
+      title: t.services.types.hourly.title,
+      description: t.services.types.hourly.description,
+      features: t.services.types.hourly.features,
+      price: t.services.types.hourly.price,
       popular: false
     }
   ];
@@ -75,10 +78,10 @@ const Services = () => {
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4">Our Services</Badge>
-          <h2 className="text-4xl font-bold mb-4">Why Choose Istanbul Express Link?</h2>
+          <Badge variant="secondary" className="mb-4">{t.services.badge}</Badge>
+          <h2 className="text-4xl font-bold mb-4">{t.services.title}</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience premium shuttle services with guaranteed comfort, safety, and reliability across Turkey's major destinations.
+            {t.services.subtitle}
           </p>
         </div>
 
@@ -103,7 +106,7 @@ const Services = () => {
             <Card key={index} className={`relative overflow-hidden hover:shadow-xl transition-all duration-300 ${service.popular ? 'border-primary border-2' : 'border-0'} bg-white/90 backdrop-blur-sm`}>
               {service.popular && (
                 <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">
-                  Most Popular
+                  {t.services.types.airport.popular}
                 </Badge>
               )}
               <CardHeader className="pb-4">
@@ -123,14 +126,14 @@ const Services = () => {
                   <div>
                     <p className="text-2xl font-bold text-primary">{service.price}</p>
                   </div>
-                  <Button 
+                   <Button 
                     className={service.popular ? 
                       "bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary/70" : 
                       "bg-secondary hover:bg-secondary/80"
                     }
-                  >
-                    Book Now
-                  </Button>
+                   >
+                     {t.services.bookNow}
+                   </Button>
                 </div>
               </CardContent>
             </Card>
