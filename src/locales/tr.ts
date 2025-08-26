@@ -1,9 +1,9 @@
 export const tr = {
   // Header
   header: {
-    email: "info@istanbulexpresslink.com",
+    email: "info@denisashuttle.com",
     phone: "+90 542 104 04 53", 
-    companyName: "Istanbul Express Link",
+    companyName: "Denisa Shuttle",
     tagline: "Premium Shuttle Hizmeti",
     nav: {
       services: "Hizmetler",
@@ -33,22 +33,29 @@ export const tr = {
       fromPlaceholder: "Adres, Havalimanı, Otel, Hastane...",
       toPlaceholder: "Adres, Havalimanı, Otel, Hastane...",
       departureDate: "Gidiş Tarihi",
+      returnDate: "Dönüş Tarihi",
       time: "Saat",
       selectTime: "Saat seçin",
+      hours: "Saat",
+      selectHours: "Saat seçin",
       passengers: "Yolcu Sayısı",
       person: "Kişi",
       people: "Kişi",
       tripType: "Seyahat Türü",
       oneWay: "Tek Yön",
       roundTrip: "Gidiş-Dönüş (%10 İNDİRİM)",
-      searchButton: "Müsait Shuttle'ları Ara"
+      searchButton: "Müsait Shuttle'ları Ara",
+      destination: "Destinasyon",
+      selectDestination: "Destinasyon seçin",
+      tourType: "Tur Türü",
+      selectTour: "Tur türü seçin"
     }
   },
 
   // Services Section  
   services: {
     badge: "Hizmetlerimiz",
-    title: "Neden Istanbul Express Link'i Seçmelisiniz?",
+    title: "Neden Denisa Shuttle'ı Seçmelisiniz?",
     subtitle: "Türkiye'nin başlıca destinasyonlarında garantili konfor, güvenlik ve güvenilirlik ile premium shuttle hizmetleri deneyimleyin.",
     features: {
       "24-7": "7/24 Hizmet",
@@ -122,7 +129,7 @@ export const tr = {
     stayUpdated: "Güncel Kalın",
     subscribe: "Abone Ol",
     emailPlaceholder: "E-posta adresiniz",
-    copyright: "© 2024 Istanbul Express Link. Tüm hakları saklıdır.",
+    copyright: "© 2024 Denisa Shuttle. Tüm hakları saklıdır.",
     links: {
       home: "Ana Sayfa",
       services: "Hizmetler",

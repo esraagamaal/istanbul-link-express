@@ -93,14 +93,14 @@ const Header = () => {
       <div className="container py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Istanbul Express Link" className="h-12 w-12" />
+            <img src={logo} alt="Denisa Shuttle" className="h-12 w-12" />
             <div>
             <h1 className="text-xl font-bold text-primary">{t.header.companyName}</h1>
             <p className="text-sm text-muted-foreground">{t.header.tagline}</p>
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-6 ml-auto">
             <a href="#services" className="text-foreground hover:text-primary transition-colors">{t.header.nav.services}</a>
             <a href="#areas" className="text-foreground hover:text-primary transition-colors">{t.header.nav.areas}</a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">{t.header.nav.about}</a>
