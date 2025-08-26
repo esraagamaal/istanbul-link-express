@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Calendar, MapPin, ArrowRightLeft, Search, Users } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState } from "react";
 import heroImage from "@/assets/hero-shuttle.jpg";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [bookingType, setBookingType] = useState<'transfer' | 'rentByHour' | 'tours'>('transfer');
   return (
     <section className="relative min-h-[700px] flex items-center overflow-hidden">
       {/* Background Image */}
@@ -56,9 +58,27 @@ const Hero = () => {
           <Card className="p-6 bg-white/95 backdrop-blur-sm shadow-2xl">
             <div className="flex items-center gap-2 mb-6">
               <div className="flex bg-muted rounded-lg p-1">
-                <Button size="sm" className="bg-primary text-primary-foreground">{t.hero.booking.transfer}</Button>
-                <Button variant="ghost" size="sm">{t.hero.booking.rentByHour}</Button>
-                <Button variant="ghost" size="sm">{t.hero.booking.tours}</Button>
+                <Button 
+                  size="sm" 
+                  onClick={() => setBookingType('transfer')}
+                  className={bookingType === 'transfer' ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground hover:bg-muted-foreground/10"}
+                >
+                  {t.hero.booking.transfer}
+                </Button>
+                <Button 
+                  size="sm" 
+                  onClick={() => setBookingType('rentByHour')}
+                  className={bookingType === 'rentByHour' ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground hover:bg-muted-foreground/10"}
+                >
+                  {t.hero.booking.rentByHour}
+                </Button>
+                <Button 
+                  size="sm" 
+                  onClick={() => setBookingType('tours')}
+                  className={bookingType === 'tours' ? "bg-primary text-primary-foreground" : "bg-transparent text-foreground hover:bg-muted-foreground/10"}
+                >
+                  {t.hero.booking.tours}
+                </Button>
               </div>
             </div>
 
